@@ -12,7 +12,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="text-2xl font-bold text-primary">
-            Tienda
+            Comercio en linea
           </Link>
           
           {/* Menú para móvil */}
@@ -29,15 +29,6 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/products" className="hover:text-primary">
               Productos
-            </Link>
-            <Link href="/categories" className="hover:text-primary">
-              Categorías
-            </Link>
-            <Link href="/about" className="hover:text-primary">
-              Nosotros
-            </Link>
-            <Link href="/contact" className="hover:text-primary">
-              Contacto
             </Link>
             <Link href="/cart" className="relative">
               <ShoppingCart size={24} />

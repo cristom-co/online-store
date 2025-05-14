@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import ProductCard from './components/ProductCard';
+import ProductCard from './components/products/ProductCard';
 import CategoryCard from './components/CategoryCard';
 import FeatureCard from './components/FeatureCard';
 

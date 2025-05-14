@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Iproduct } from "../types/types";
+import { Iproduct } from "../../types/product";
 
 export default function ProductCard({ product }: { product: Iproduct }) {
     return (
