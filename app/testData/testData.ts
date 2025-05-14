@@ -6,6 +6,7 @@ export const productsTest = [
         price: 39.99,
         price_formatted: '$129.000',
         image: "https://images.pexels.com/photos/755992/pexels-photo-755992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: "..."
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ export const productsTest = [
         price: 39.99,
         price_formatted: '$129.000',
         image: "https://images.pexels.com/photos/1961795/pexels-photo-1961795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: "..."
     },
     {
         id: 3,
@@ -22,6 +24,7 @@ export const productsTest = [
         price: 39.99,
         price_formatted: '$129.000',
         image: "https://images.pexels.com/photos/1961791/pexels-photo-1961791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: "..."
     },
     {
         id: 4,
@@ -30,6 +33,7 @@ export const productsTest = [
         price: 39.99,
         price_formatted: '$129.000',
         image: "https://images.pexels.com/photos/1830450/pexels-photo-1830450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: "..."
     },
 
 ]

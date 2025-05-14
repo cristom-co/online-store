@@ -21,7 +21,7 @@ export async function getAllProducts() {
   }
 }
 
-export async function getProductBySlug(slug) {
+export async function getProductBySlug(slug : string) {
   try {
     const response = await cmsClient.get(`/products?filters[slug][$eq]=${slug}`);
     return response.data.data[0] || null;
@@ -41,7 +41,7 @@ export async function getFeaturedProducts() {
   }
 }
 
-export async function getProductsByCategory(categorySlug) {
+export async function getProductsByCategory(categorySlug: string) {
   try {
     const response = await cmsClient.get(`/products?filters[category][slug][$eq]=${categorySlug}`);
     return response.data.data;

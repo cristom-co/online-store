@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState } from 'react';
-import { getProductBySlug, getAllProducts } from '../lib/cms/products';
+// import { getProductBySlug, getAllProducts } from '../lib/cms/products';
+import { Iproduct } from '../types/types';
 
-export default function ProductDetail({ product }) {
+export default function ProductDetail({ product } : {product : Iproduct}) {
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
 

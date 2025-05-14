@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductCard({ product } : { product: any}) {
+import { Iproduct } from "../types/types";
+
+export default function ProductCard({ product }: { product: Iproduct }) {
     return (
       <div className="card hover:shadow-lg transition-shadow">
         <div className="relative h-48 mb-4">
