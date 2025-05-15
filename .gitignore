@@ -1,0 +1,26 @@
+# Node
+node_modules/
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker
+**/Dockerfile
+**/docker-compose.override.yml
+
+# Strapi build
+backend/.cache/
+backend/build/
+backend/public/uploads/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Editor/OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
