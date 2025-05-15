@@ -5,13 +5,13 @@ import { Iproduct } from "../../types/product";
 
 export default function ProductCard({ product }: { product: Iproduct }) {
     return (
-      <div className="card hover:shadow-lg transition-shadow">
+      <div className="card hover:shadow-lg transition-shadow p-4">
         <div className="relative h-48 mb-4">
           <Image 
             src={product.image} 
             alt={product.name}
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'contain' }}
             className="rounded-t-lg"
           />
         </div>
