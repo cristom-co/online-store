@@ -18,7 +18,7 @@ export default function Home() {
       <section className="relative h-96 bg-gray-900 mb-12">
         <div className="absolute inset-0 z-0 opacity-60">
           <Image 
-            src="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/1050256/pexels-photo-1050256.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Banner principal"
             fill
             style={{ objectFit: 'cover' }}
@@ -32,7 +32,7 @@ export default function Home() {
             <p className="text-xl text-white mb-8">
               Descubre nuestros productos de alta calidad y el mejor servicio.
             </p>
-            <Link href="/products" className="btn bg-primary px-8 py-3 text-lg">
+            <Link href="/products" className="btn bg-primary px-8 py-3 text-lg bg-white rounded-lg">
               Ver Productos
             </Link>
           </div>
@@ -59,18 +59,33 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-6 text-center">Nuestras Categorías</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <CategoryCard 
-            title="Categoría 1" 
-            image="/images/category1.jpg" 
-            slug="categoria-1" 
+            title="Perfumes" 
+            image="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            slug="perfumes" 
           />
           <CategoryCard 
-            title="Categoría 2" 
-            image="/images/category2.jpg" 
+            title="Relojes" 
+            image="https://images.pexels.com/photos/2113994/pexels-photo-2113994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             slug="categoria-2" 
           />
           <CategoryCard 
-            title="Categoría 3" 
-            image="/images/category3.jpg" 
+            title="Medias" 
+            image="https://images.pexels.com/photos/5737913/pexels-photo-5737913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            slug="categoria-3" 
+          />
+            <CategoryCard 
+            title="Chanclas" 
+            image="https://images.pexels.com/photos/131021/pexels-photo-131021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            slug="perfumes" 
+          />
+          <CategoryCard 
+            title="Joyeria" 
+            image="https://images.pexels.com/photos/1670723/pexels-photo-1670723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            slug="categoria-2" 
+          />
+          <CategoryCard 
+            title="Tecnologia" 
+            image="https://images.pexels.com/photos/3921845/pexels-photo-3921845.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             slug="categoria-3" 
           />
         </div>
