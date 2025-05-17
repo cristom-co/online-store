@@ -10,10 +10,6 @@ npm-debug.log*
 **/Dockerfile
 **/docker-compose.override.yml
 
-# Strapi build
-backend/.cache/
-backend/build/
-backend/public/uploads/
 
 # Next.js
 frontend/.next/
@@ -24,3 +20,6 @@ frontend/out/
 *.swp
 .idea/
 .vscode/
+
+./uploads
+api.rest

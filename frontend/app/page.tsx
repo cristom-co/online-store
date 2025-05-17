@@ -7,10 +7,12 @@ import FeatureCard from './components/FeatureCard';
 
 import { productsTest } from './testData/testData';
 
-// import { useEffect, useState } from 'react';
-// import { getFeaturedProducts } from '../lib/cms/products';
+import { getHomePageData } from './lib/cms';
 
-export default function Home() {
+export default async function Home() {
+
+  const data = await getHomePageData()
+  // console.log('data', data)
 
   return (
     <div>

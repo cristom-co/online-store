@@ -1,6 +1,13 @@
 import axios from 'axios';
 
-const CMS_API_URL = process.env.CMS_API_URL;
+if (!process.env.NEXT_PUBLIC_CMS_API_URL) {
+  throw new Error('La variable de entorno NEXT_PUBLIC_CMS_API_URL no está definida');
+}
+if (!process.env.CMS_API_TOKEN) {
+  throw new Error('La variable de entorno CMS_API_TOKEN no está definida');
+}     
+
+const CMS_API_URL = process.env.NEXT_PUBLIC_CMS_API_URL + '/api';
 const CMS_API_TOKEN = process.env.CMS_API_TOKEN;
 
 // Configuración para las peticiones al CMS
@@ -11,42 +18,31 @@ const cmsClient = axios.create({
   },
 });
 
+export async function getHomePageData() {
+
+  console.log('CMS_API_URL', CMS_API_URL);
+  console.log('CMS_API_TOKEN', CMS_API_TOKEN);
+
+
+  // try {
+    const response = await cmsClient.get('/home');
+    return response.data;
+  // }
+  // catch (error) {
+  //   console.error('Error al obtener datos de la página de inicio:', error);
+  //   return {
+  //     categories: [],
+  //     features: [],
+  //   };
+  // }
+}
+
 export async function getAllProducts() {
   try {
     const response = await cmsClient.get('/products');
     return response.data.data;
   } catch (error) {
     console.error('Error al obtener productos:', error);
-    return [];
-  }
-}
-
-export async function getProductBySlug(slug : string) {
-  try {
-    const response = await cmsClient.get(`/products?filters[slug][$eq]=${slug}`);
-    return response.data.data[0] || null;
-  } catch (error) {
-    console.error(`Error al obtener producto ${slug}:`, error);
-    return null;
-  }
-}
-
-export async function getFeaturedProducts() {
-  try {
-    const response = await cmsClient.get('/products?filters[featured][$eq]=true');
-    return response.data.data;
-  } catch (error) {
-    console.error('Error al obtener productos destacados:', error);
-    return [];
-  }
-}
-
-export async function getProductsByCategory(categorySlug: string) {
-  try {
-    const response = await cmsClient.get(`/products?filters[category][slug][$eq]=${categorySlug}`);
-    return response.data.data;
-  } catch (error) {
-    console.error(`Error al obtener productos de la categoría ${categorySlug}:`, error);
     return [];
   }
 }

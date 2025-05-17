@@ -10,6 +10,9 @@ services:
       - ./frontend:/app
     depends_on:
       - backend
+    environment:
+      NEXT_PUBLIC_CMS_API_URL: ${CMS_API_URL}
+      CMS_API_TOKEN: ${CMS_API_TOKEN}
 
   backend:
     build:
@@ -18,7 +21,10 @@ services:
       - "1337:1337"
     volumes:
       - ./backend:/app
+      - ./backend/uploads:/app/uploads
+
     environment:
+      # database config
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
@@ -26,6 +32,17 @@ services:
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       NODE_ENV: development
+
+      #strapi config
+      HOST: ${HOST}
+      PORT: ${PORT}
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+
     depends_on:
       - postgres
 
@@ -38,6 +55,5 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
 volumes:
   postgres-data:
