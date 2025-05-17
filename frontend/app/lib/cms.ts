@@ -21,14 +21,14 @@ const cmsClient = axios.create({
 export async function getHomePageData() {
 
   try {
-    const response = await cmsClient.get('/home');
+    const response = await cmsClient.get('/home?populate=cover');
     return response.data;
   }
   catch (error) {
     console.error('Error al obtener datos de la página de inicio:', error);
     return {
-      categories: [],
-      features: [],
+      data: null,
+      meta: null
     };
   }
 }
