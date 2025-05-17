@@ -4,6 +4,6 @@ export interface Iproduct  {
     slug: string,
     price: number,
     price_formatted: string,
-    image: string,
+    images: string,
     description: string
 }

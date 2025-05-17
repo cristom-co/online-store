@@ -33,9 +33,9 @@ export async function getHomePageData() {
   }
 }
 
-export async function getAllProducts() {
+export async function getFeaturedProducts() {
   try {
-    const response = await cmsClient.get('/products');
+    const response = await cmsClient.get('/products?populate=images');
     return response.data.data;
   } catch (error) {
     console.error('Error al obtener productos:', error);

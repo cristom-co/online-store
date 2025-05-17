@@ -1,63 +1,18 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
-import ProductCard from './components/products/ProductCard';
+import ProductCard from './components/Product/ProductCard';
 import CategoryCard from './components/CategoryCard';
 import FeatureCard from './components/FeatureCard';
+import BannerHero from './components/BannerHero';
+import ProductFeatured from './components/Product/ProductFeatured';
 
-import { productsTest } from './testData/testData';
 
-import { getHomePageData } from './lib/cms';
-
-export default async function Home() {
-
-  // Fetch data from CMS
-  const { data: { cover } } = await getHomePageData();
-  const bannerHero = cover  ? process.env.NEXT_PUBLIC_CMS_API_URL + cover.formats.large.url : '/default-images/banner-hero.jpg';
+export default  function Home() {
 
   return (
-    <div>
-      {/* Banner Hero */}
-      <section className="relative h-96 bg-gray-900 mb-12">
-        <div className="absolute inset-0 z-0 opacity-60 w-full h-full">
-          <Image
-            src={bannerHero}
-            alt="Banner principal"
-            fill
-            className="object-cover"
-            priority
-            loading="eager"
-          />
-        </div>
-        <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Bienvenidos
-            </h1>
-            <p className="text-xl text-white mb-8">
-              Descubre nuestros productos de alta calidad y el mejor servicio.
-            </p>
-            <Link href="/products" className="btn bg-primary px-8 py-3 text-lg bg-white rounded-lg">
-              Ver Productos
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Productos Destacados */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-center">Productos Destacados</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {productsTest?.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <Link href="/products" className="btn">
-            Ver todos los productos
-          </Link>
-        </div>
-      </section>
+    <>
+      <BannerHero />
+      <ProductFeatured />
 
       {/* Categorías */}
       <section className="mb-12">
@@ -119,6 +74,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
