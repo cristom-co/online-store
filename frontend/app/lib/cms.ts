@@ -20,21 +20,17 @@ const cmsClient = axios.create({
 
 export async function getHomePageData() {
 
-  console.log('CMS_API_URL', CMS_API_URL);
-  console.log('CMS_API_TOKEN', CMS_API_TOKEN);
-
-
-  // try {
+  try {
     const response = await cmsClient.get('/home');
     return response.data;
-  // }
-  // catch (error) {
-  //   console.error('Error al obtener datos de la página de inicio:', error);
-  //   return {
-  //     categories: [],
-  //     features: [],
-  //   };
-  // }
+  }
+  catch (error) {
+    console.error('Error al obtener datos de la página de inicio:', error);
+    return {
+      categories: [],
+      features: [],
+    };
+  }
 }
 
 export async function getAllProducts() {

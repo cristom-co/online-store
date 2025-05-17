@@ -7,12 +7,9 @@ import FeatureCard from './components/FeatureCard';
 
 import { productsTest } from './testData/testData';
 
-import { getHomePageData } from './lib/cms';
+// import { getHomePageData } from './lib/cms';
 
 export default async function Home() {
-
-  const data = await getHomePageData()
-  // console.log('data', data)
 
   return (
     <div>
